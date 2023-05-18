@@ -1,52 +1,156 @@
-import React from 'react';
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import Tools from "./Tools";
+import { AuthContext } from "../../../Provider/AuthProvider";
+
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+    const { user, signOutUser } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+            })
+    }
+
+
     return (
-        <div>
-            <div className="navbar bg-base-100">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-      </label>
-      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Item 1</a></li>
-        <li tabIndex={0}>
-          <a className="justify-between">
-            Parent
-            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-          </a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li tabIndex={0}>
-        <a>
-          Parent
-          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-        <ul className="p-2">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
-        </ul>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <a className="btn">Get started</a>
-  </div>
-</div>
-        </div>
+        <nav className=" container mx-auto">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center">
+                        <Link to="/" className="text-blue-900 text-4xl font-bold">
+                            Toytopia
+                        </Link>
+                    </div>
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex font-bold items-baseline space-x-4 text-lg">
+                            <NavLink to="/" className="text-gray-500">
+                                Home
+                            </NavLink>
+                            <NavLink to="/all-toys" className="text-gray-500">
+                                All Toys
+                            </NavLink>
+                            <NavLink to="/my-toys" className="text-gray-500">
+                                My Toys
+                            </NavLink>
+                            <NavLink to="/add-toys" className="text-gray-500">
+                                Add Toys
+                            </NavLink>
+                            <NavLink to="/blog" className=" text-gray-500">
+                                Blog
+                            </NavLink>
+                            {
+                                user ? <div className='flex items-center space-x-2 md:space-x-4'>
+                                    <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
+                                    <button onClick={handleSignOut} className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md'>Log Out</button>
+                                </div> : <Link to='/login'><button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md'>Login</button></Link>
+                            }
+
+                        </div>
+                    </div>
+
+                    <div className="-mr-2 flex md:hidden">
+                        <button
+                            onClick={toggleMenu}
+                            type="button"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            aria-controls="mobile-menu"
+                            aria-expanded="false"
+                        >
+                            <span className="sr-only">Open main menu</span>
+                            {!isMenuOpen ? (
+                                <svg
+                                    className="block h-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    className="block h-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            )}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {isMenuOpen && (
+                <div className="md:hidden" id="mobile-menu">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        {
+                            user ? <div className='flex items-center space-x-2 md:space-x-4'>
+                                <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
+                                <button onClick={handleSignOut} className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md'>Sign Out</button>
+                            </div> : <Link to='/login'><button className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md'>Login</button></Link>
+                        }
+                        <NavLink
+                            to="/"
+                            className="block px-3 py-2 rounded-md text-base font-medium  text-black hover:text-white hover:bg-gray-700"
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            to="/all-toys"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
+                        >
+                            All Toys
+                        </NavLink>
+                        <NavLink
+                            to="/my-toys"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
+                        >
+                            My Toys
+                        </NavLink>
+                        <NavLink
+                            to="/add-toys"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
+                        >
+                            Add Toys
+                        </NavLink>
+                        <NavLink
+                            to="/blog"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
+                        >
+                            Blog
+                        </NavLink>
+
+                    </div>
+                </div>
+            )}
+        </nav>
     );
 };
 
