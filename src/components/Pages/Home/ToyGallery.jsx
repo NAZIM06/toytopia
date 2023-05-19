@@ -1,4 +1,4 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -17,7 +17,7 @@ const ToyGallery = () => {
           <img className="w-full h-full object-cover" data-aos='fade-up' src="https://images.unsplash.com/photo-1574071744270-6b1c3fae0e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="patryk-norman-BBQOQFk-OICg-unsplash" />
         </div>
         <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
-          <img className="w-full h-full object-cover" data-aos='fade-up' data-aos='fade-up' src="https://images.unsplash.com/photo-1587292818536-5a404595dd36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1046&q=80" alt="marcos-ferreira-QYBVbw-JYx-NA-unsplash" />
+          <img className="w-full h-full object-cover" data-aos='fade-up' src="https://images.unsplash.com/photo-1587292818536-5a404595dd36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1046&q=80" alt="marcos-ferreira-QYBVbw-JYx-NA-unsplash" />
         </div>
         <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
           <img className="w-full h-full object-cover" data-aos='fade-up' src="https://images.unsplash.com/photo-1616850508572-8b22fb1e38c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="patryk-norman-ZR-AL5r0-KZA-unsplash" />

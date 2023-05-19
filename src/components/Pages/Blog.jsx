@@ -1,6 +1,8 @@
 import React from 'react';
+import DynamicTitle from './Shared/DynamicTitle';
 
 const Blog = () => {
+    DynamicTitle("Blog");
     return (
         <>
             <div className=" font-serif m-7">

@@ -19,6 +19,10 @@ const Login = () => {
         const password = form.password.value;
 
         setError('')
+        if (password.length < 6) {
+            setError('Password at least 6 character long')
+            return;
+        } else {
         signInUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -34,6 +38,7 @@ const Login = () => {
                 }
                 console.log(errorMessage)
             })
+        }
         // console.log(event.target.email.value)
     }
 
