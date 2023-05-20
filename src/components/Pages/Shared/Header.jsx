@@ -42,12 +42,12 @@ const Header = () => {
                             <NavLink to="/all-toys" className="text-gray-500">
                                 All Toys
                             </NavLink>
-                            <NavLink to="/my-toys" className="text-gray-500">
-                                My Toys
-                            </NavLink>
-                            <NavLink to="/add-toys" className="text-gray-500">
-                                Add Toys
-                            </NavLink>
+                            {user &&
+                                <>
+                                    <NavLink to={'/my-toys'} className="text-gray-500">My Toys</NavLink>
+                                    <NavLink to={'/add-toy'} className="text-gray-500">Add a toy</NavLink>
+                                </>
+                            }
                             <NavLink to="/blog" className=" text-gray-500">
                                 Blog
                             </NavLink>

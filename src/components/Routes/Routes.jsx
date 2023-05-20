@@ -44,7 +44,7 @@ const route = createBrowserRouter([
             }
             ,
             {
-                path: 'add-toys',
+                path: 'add-toy',
                 element:<AddToy/>
             }
         ]

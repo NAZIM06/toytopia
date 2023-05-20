@@ -12,9 +12,9 @@ const ShopCategoryCard = ({ data }) => {
   const filteredData = data.filter((item) => item.category === activeTab);
 
   return (
-    <div>
+    <div  className="flex justify-center font-bold">
       <Tabs value={activeTab} onChange={handleTabChange} indicatorColor="primary" textColor="primary">
-        <Tab label="Sports Car" />
+        <Tab  label="Sports Car" />
         <Tab label="Truck" />
         <Tab label="Regular Car" />
       </Tabs>
@@ -22,7 +22,7 @@ const ShopCategoryCard = ({ data }) => {
         {filteredData.map((item) => (
           <div className="p-4 border border-gray-300 rounded" key={item.toyName}>
             <img src={item.photo} alt={item.toyName} className="w-full" />
-            <h3 className="text-lg font-semibold">{item.toyName}</h3>
+            <h3 className="text-lg font-semibold">fdsgsdfg</h3>
             <p className="text-sm">Seller: {item.sellerName}</p>
             <p className="text-sm">Email: {item.email}</p>
             <p className="text-sm">Price: {item.price}</p>
