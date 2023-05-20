@@ -76,7 +76,7 @@ const Login = () => {
                     <button className='button '>Login</button>
                     <p className='text-center p-3'>Don't have an account? <Link to='/register'><span className='text-btn-color underline'>Create Account</span></Link></p>
                 </form>
-                <div onClick={handleGoogleSignIn} className='my-5 flex w-10/12 rounded-3xl mx-auto p-2 my-1 justify-between items-center hover:bg-orange-400 hover:text-white cursor-pointer border-2'>
+                <div onClick={handleGoogleSignIn} className='my-5 flex w-10/12 rounded-3xl mx-auto p-2  justify-between items-center hover:bg-[#121212] hover:text-white cursor-pointer border-2'>
                     <FcGoogle className='h-6 w-6' />
                     <p className='font-semibold mx-auto'>Continue with Google</p>
                 </div>

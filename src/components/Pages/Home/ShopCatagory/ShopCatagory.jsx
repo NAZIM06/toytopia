@@ -12,14 +12,14 @@ const ShopCategory = () => {
   const [data, setdata] = useState([]);
 
   const tabData = (data) => {
-    fetch(`http://localhost:5000/category/?category=${data}`)
+    fetch(`https://toytopia-server-two.vercel.app/category/?category=${data}`)
       .then(response => response.json())
       .then(data => setdata(data))
   };
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/category/?category=Sports Car')
+    fetch('https://toytopia-server-two.vercel.app/category/?category=Sports Car')
       .then((response) => response.json())
       .then((data) => setdata(data))
   }, []);

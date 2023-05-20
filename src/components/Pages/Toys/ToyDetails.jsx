@@ -7,7 +7,7 @@ const ToyDetails = () => {
     const navigate = useNavigate();
     const data = useLoaderData();
     return (
-        <div>
+        <div className='h-screen'>
             <input type="checkbox" id="my-modal-3" className="modal-toggle" defaultChecked />
             <div className="fixed z-10 inset-0 flex items-center justify-center">
   <div className="modal-box relative w-full max-w-3xl bg-white rounded-2xl p-8">

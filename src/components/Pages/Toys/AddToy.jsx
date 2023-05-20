@@ -19,7 +19,7 @@ const AddToy = () => {
         data.category = selectedOption?.value;
         data.sellerName = user?.displayName;
         data.sellerEmail = user?.email;
-        fetch('http://localhost:5000/addtoy', {
+        fetch('https://toytopia-server-two.vercel.app/addtoy', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
