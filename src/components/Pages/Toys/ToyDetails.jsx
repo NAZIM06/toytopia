@@ -11,12 +11,7 @@ const ToyDetails = () => {
             <input type="checkbox" id="my-modal-3" className="modal-toggle" defaultChecked />
             <div className="fixed z-10 inset-0 flex items-center justify-center">
   <div className="modal-box relative w-full max-w-3xl bg-white rounded-2xl p-8">
-  <button
-      onClick={() => navigate('/all-toys')}
-      className="btn bg-blue-500 border-0 text white absolute right-2 top-2"
-    >
-      <RxCross1 />
-    </button>
+  <label onClick={()=>navigate('/all-toys')} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
     <img
       src={data[0].image}
       className="h-72 w-auto mx-auto rounded-2xl"

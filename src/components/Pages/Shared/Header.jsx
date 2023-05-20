@@ -30,10 +30,13 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
+                        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-27.png" alt="Logo" className="w-12 h-12 mr-2" />
                         <Link to="/" className="text-blue-900 text-4xl font-bold">
                             Toytopia
                         </Link>
                     </div>
+
+
                     <div className="hidden md:block">
                         <div className="ml-10 flex font-bold items-baseline space-x-4 text-lg">
                             <NavLink to="/" className="text-gray-500">

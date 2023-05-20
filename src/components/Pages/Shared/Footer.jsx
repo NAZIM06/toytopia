@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="footer p-3 bg-base-300 text-base-content  flex flex-col  md:flex-row items-center justify-around">
-            <div>
-                {/* <img className='h-20' src={img} alt="" /> */}
-                <Link to="/" className="text-lime-600 text-3xl font-bold">
-                    Toytopia
-                </Link>
-            </div>
+           <div className="flex items-center">
+                        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-27.png" alt="Logo" className="w-12 h-12 mr-2" />
+                        <Link to="/" className="text-blue-900 text-4xl font-bold">
+                            Toytopia
+                        </Link>
+                    </div>
             <div className=''><p>Copyright © 2023 - All right reserved by Toytopia</p></div>
             <div>
                 <span className="footer-title">Social</span>

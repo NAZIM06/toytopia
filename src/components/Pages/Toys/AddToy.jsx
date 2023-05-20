@@ -48,7 +48,7 @@ const AddToy = () => {
                     <input disabled defaultValue={user?.displayName} placeholder="Seller Name" className="input input-bordered w-full max-w-xs" />
                     <input disabled defaultValue={user?.email} placeholder="Seller Email" className="input input-bordered w-full max-w-xs" />
                     <input {...register("name", { required: 'true', maxLength: 20 })} placeholder="Toy Name" className="input input-bordered w-full max-w-xs" />
-                    <input {...register("image", { required: 'true' })} type="text" placeholder="Photo Url" className="input input-bordered w-full max-w-xs" />
+                    <input {...register("image", { required: 'true' })} type="url" placeholder="Photo Url" className="input input-bordered w-full max-w-xs" />
                     <input type="number" {...register("price", { required: 'true', maxLength: 20 })} placeholder="Price" className="input input-bordered w-full max-w-xs" />
                     <CreatableSelect defaultValue={selectedOption} placeholder={'Category'} onChange={(data) => setSelectedOption(data)} className="max-w-xs " options={options} />
                     <input type="number" {...register("rating", { min: 1, max: 5 })} placeholder="rating (1 - 5) only" className="input input-bordered w-full max-w-xs" />
