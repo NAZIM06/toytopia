@@ -26,20 +26,16 @@ const AllToys = () => {
     }
 
     useEffect(() => {
-        fetch('https://toytopia-server-two.vercel.app/').then(data => data.json()).then(data => setAllToys(data))
-    }, [])
-
-
-
-
-
-
+        fetch('https://toytopia-server-two.vercel.app/')
+            .then(response => response.json())
+            .then(data => setAllToys(data));
+    }, []);
 
     return (
         <div >
             <div className="flex justify-center my-8 gap-3">
                 <input
-                   type="text" id="myInput" onKeyUp={() => { findInTable() }} placeholder="Search with name"
+                    type="text" id="myInput" onKeyUp={() => { findInTable() }} placeholder="Search with name"
                     className="border border-gray-800 px-12 py-2 rounded-md  focus:border-blue-500"
                 />
             </div>

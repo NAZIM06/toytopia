@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import DynamicTitle from '../Shared/DynamicTitle';
-import { MdDeleteSweep } from "react-icons/md";
+import { FiDelete } from "react-icons/fi";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -73,12 +73,12 @@ const MyToys = () => {
         const quantity = parseInt(event.target.quantity.value);
         const rating = parseInt(event.target.rating.value);
         const description = event.target.description.value;
-        const totaldata = { id, name, price, quantity, rating, description }
+        const fullData = { id, name, price, quantity, rating, description }
 
         fetch('https://toytopia-server-two.vercel.app/', {
             method: 'PUT',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify(totaldata)
+            body: JSON.stringify(fullData)
         }).then(data => data.json()).then(data => {
             if (data.modifiedCount == 1) {
                 document.getElementById('my-modal-6').click();
@@ -86,7 +86,7 @@ const MyToys = () => {
                 setCount(!count)
                 event.target.reset();
             } else {
-                toast.info("You haven't changed anything.");
+                toast.info("You didn't change.");
             }
         })
     }
@@ -179,7 +179,7 @@ const MyToys = () => {
                                         <div className="flex items-center gap-10">
                                             <GrDocumentUpdate className="cursor-pointer" size={23} onClick={() => updataData(data)} />
 
-                                            <MdDeleteSweep className="cursor-pointer" size={30} onClick={() => deletedata(data._id)} />
+                                            <FiDelete className="cursor-pointer" size={30} onClick={() => deletedata(data._id)} />
 
                                         </div>
                                     </td>
