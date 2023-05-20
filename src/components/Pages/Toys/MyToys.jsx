@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicTitle from './Shared/DynamicTitle';
+import DynamicTitle from '../Shared/DynamicTitle';
 
 const MyToys = () => {
     DynamicTitle("My Toys");

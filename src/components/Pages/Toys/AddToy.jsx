@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import CreatableSelect from 'react-select/creatable';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import DynamicTitle from './Shared/DynamicTitle';
-import { AuthContext } from "../../Provider/AuthProvider";
+import DynamicTitle from '../Shared/DynamicTitle';
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddToy = () => {
     DynamicTitle("Add Toy");
