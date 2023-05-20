@@ -52,8 +52,8 @@ const ShopCategory = () => {
                 </div>
               </div>
             </div>
-            <div className='p-2 mt-3'>
-              <Link onClick={() => { (user) ? window.location.replace(`/all-toys/${data._id}`) : setTimeout(() => window.location.replace(`/all-toys/${data._id}`), 2000) }}><button className="button"
+            <div className='mt-1'>
+              <Link onClick={() => { (user) ? window.location.replace(`/all-toys/${data._id}`) : setTimeout(() => window.location.replace(`/all-toys/${data._id}`), 2000) }}><button className="button mb-2"
                 onClick={() => { (user) ? '' : toast.error('You have to log in.') }}>View Details</button></Link>
             </div>
           </div>
