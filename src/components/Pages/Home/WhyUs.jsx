@@ -10,9 +10,9 @@ const WhyUs = () => {
   }, []);
   
     return (
-      <div className="max-w-screen-lg mx-auto my-8">
+      <div className="max-w-screen-lg mx-auto my-8 pt-12">
       <div className="text-center">
-        <h1 className='text-5xl font-extrabold mb-5 text-blue-900'>Get Your Favorite Toys From Here</h1>
+        <h1 className='text-5xl font-extrabold mb-5 text-blue-900'>Get Your Favorite Toys</h1>
         <p className="text-lg">
 Experience the joy of finding your favorite toys all in one place. Discover a wide selection of toys that cater to every interest and age group. From classic favorites to the latest trends, indulge in a world of endless fun and excitement. Shop now and make playtime unforgettable.</p>
       </div>
