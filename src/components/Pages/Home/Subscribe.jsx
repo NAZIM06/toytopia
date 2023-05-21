@@ -2,7 +2,7 @@ import React from 'react';
 
 const Subscribe = () => {
     return (
-        <div className="hero py-10 bg-base-200">
+        <div className="hero py-10 bg-base-200 mb-5">
         <div className="hero-content flex flex-col-reverse md:flex-row w-4/5 justify-between mx-auto">
           <div className="w-full md:w-1/2 flex items-center justify-center md:justify-start md:ml-4 mb-8 md:mb-0">
             <div className="text-center">
