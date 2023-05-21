@@ -130,7 +130,7 @@ const MyToys = () => {
                 <table className="table w-full" id="table">
                 {toys.length == 0 &&
                 <div className="p-10 top-28 w-full flex justify-center absolute">
-                    <h1 className=" bg-white p-3 rounded-xl font-semibold">You didn't any toy.</h1>
+                    <h1 className=" bg-white p-3 rounded-xl font-semibold">You didn't add any toy.</h1>
                 </div>
             }
                     <thead>
