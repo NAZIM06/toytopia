@@ -8,15 +8,15 @@ const WhyUs = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-  
-    return (
-      <div className="max-w-screen-lg mx-auto my-8 pt-12">
+
+  return (
+    <div className="max-w-screen-lg mx-auto my-8 pt-12">
       <div className="text-center">
         <h1 className='text-5xl font-extrabold mb-5 text-blue-900'>Get Your Favorite Toys</h1>
         <p className="text-lg">
-Experience the joy of finding your favorite toys all in one place. Discover a wide selection of toys that cater to every interest and age group. From classic favorites to the latest trends, indulge in a world of endless fun and excitement. Shop now and make playtime unforgettable.</p>
+          Experience the joy of finding your favorite toys all in one place. Discover a wide selection of toys that cater to every interest and age group. From classic favorites to the latest trends, indulge in a world of endless fun and excitement. Shop now and make playtime unforgettable.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5"  data-aos="zoom-in" data-aos-duration="500">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5" data-aos="zoom-in">
         <div className=" rounded-lg shadow-md p-4 text-center bg-slate-50">
           <img src="https://static.live.templately.com/woocommerce/2022/12/fa90a862-funzone-iconimg-01.png" alt="Logo" className="mt-2 mx-auto" />
           <h2 className="text-lg text-blue-700 font-bold mb-2">Best Toys Collection</h2>
@@ -39,7 +39,7 @@ Experience the joy of finding your favorite toys all in one place. Discover a wi
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default WhyUs;
