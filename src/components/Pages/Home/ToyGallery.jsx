@@ -12,7 +12,7 @@ const ToyGallery = () => {
   return (
     <div className='my-12 px-10'>
       <p className='font-extrabold text-3xl text-blue-900 text-center my-10'>Toy Gallery</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
           <img className="w-full h-full object-cover" data-aos='fade-up' src="https://images.unsplash.com/photo-1574071744270-6b1c3fae0e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="patryk-norman-BBQOQFk-OICg-unsplash" />
         </div>
@@ -41,7 +41,6 @@ const ToyGallery = () => {
           <img className="w-full h-full object-cover" data-aos='fade-up' src="https://images.unsplash.com/photo-1536846511313-4b07b637bff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="valentino-montironi-av-Il29-hxao-unsplash" />
         </div>
       </div>
-
     </div>
   );
 };

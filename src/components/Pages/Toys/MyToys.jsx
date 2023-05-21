@@ -117,7 +117,7 @@ const MyToys = () => {
 
 
     return (
-        <div className="h-screen">
+        <div>
 
             {toys.length == 0 &&
                 <div className="p-10 top-28 w-full flex justify-center absolute">
@@ -132,8 +132,9 @@ const MyToys = () => {
                     className="border border-gray-800 px-12 py-2 rounded-md  focus:border-blue-500"
                 />
             </div>
-            <div className="overflow-x-auto">
+            {/* <div className="overflow-x-auto"> */}
 
+            <div className="w-full max-w-screen-lg mx-auto">
                 <table className="table w-full" id="table">
                     <thead>
                         <tr className="divide-y" style={{ borderBottom: '1px solid black' }}>
@@ -183,7 +184,7 @@ const MyToys = () => {
                                         <div className="flex items-center gap-10">
                                             <GrDocumentUpdate className="cursor-pointer" size={23} onClick={() => updataData(data)} />
 
-                                            <FiDelete className="cursor-pointer" size={30} onClick={() => deletedata(data._id)} />
+                                            <FiDelete className="cursor-pointer text-red-700" size={30} onClick={() => deletedata(data._id)} />
 
                                         </div>
                                     </td>
@@ -200,24 +201,46 @@ const MyToys = () => {
                 <form className="modal-box" onSubmit={(event) => updatevalue(event)}>
 
                     <div>
+                        <label htmlFor="name" className="block mb-2 font-bold">Toy name:</label>
+                        <input
+                            type="text"
+                            defaultValue={modaldata.name}
+                            className="w-full px-3 py-2 mb-4 leading-tight border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            id="name"
+                        />
 
-                        <label htmlFor="">Toy name : </label>
-                        <input type="text" defaultValue={modaldata.name} className="ml-4 mb-2 input input-bordered w-full max-w-xs" id="name" />
-                        <br />
-                        <label htmlFor="">Price : </label>
-                        <input type="number" defaultValue={modaldata.price} className="ml-12 mb-2 input input-bordered w-full max-w-xs" id="price" />
-                        <br />
-                        <label htmlFor="">Quantity : </label>
-                        <input type="number" defaultValue={modaldata.quantity} className="ml-5 mb-2 input input-bordered w-full max-w-xs" id="quantity" />
-                        <br />
-                        <label htmlFor="">Rating : </label>
-                        <input type="number" defaultValue={modaldata.rating} className="ml-9 mb-2 input input-bordered w-full max-w-xs" id="rating" />
-                        <br />
-                        <label htmlFor="">Description : </label>
-                        <input type="text" defaultValue={modaldata?.description} className="input mb-2 input-bordered w-full max-w-xs" id="description" />
+                        <label htmlFor="price" className="block mb-2 font-bold">Price:</label>
+                        <input
+                            type="number"
+                            defaultValue={modaldata.price}
+                            className="w-full px-3 py-2 mb-4 leading-tight border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            id="price"
+                        />
 
+                        <label htmlFor="quantity" className="block mb-2 font-bold">Quantity:</label>
+                        <input
+                            type="number"
+                            defaultValue={modaldata.quantity}
+                            className="w-full px-3 py-2 mb-4 leading-tight border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            id="quantity"
+                        />
+
+                        <label htmlFor="rating" className="block mb-2 font-bold">Rating:</label>
+                        <input
+                            type="number"
+                            defaultValue={modaldata.rating}
+                            className="w-full px-3 py-2 mb-4 leading-tight border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            id="rating"
+                        />
+
+                        <label htmlFor="description" className="block mb-2 font-bold">Description:</label>
+                        <input
+                            type="text"
+                            defaultValue={modaldata?.description}
+                            className="w-full px-3 py-2 mb-4 leading-tight border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            id="description"
+                        />
                     </div>
-
 
                     <div className="modal-action">
                         <label htmlFor="my-modal-6" className="button">Cancel</label>

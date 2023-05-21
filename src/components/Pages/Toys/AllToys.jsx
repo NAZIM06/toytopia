@@ -47,7 +47,7 @@ const AllToys = () => {
             </div>
 
             <div>
-                <div className="overflow-x-auto">
+                <div className="w-full max-w-screen-lg mx-auto">
                     <table className="table w-full" id="table">
                         <thead>
                             <tr className="divide-y">
