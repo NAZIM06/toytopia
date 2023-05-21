@@ -117,25 +117,22 @@ const MyToys = () => {
 
 
     return (
-        <div>
-
-            {toys.length == 0 &&
-                <div className="p-10 top-28 w-full flex justify-center absolute">
-                    <h1 className=" bg-white p-3 rounded-xl font-semibold">You haven't added any Toys.</h1>
-                </div>
-            }
-
-
+        <div className='min-h-[100vh]'>
+          <div>
+          </div>
             <div className="flex justify-center my-8 gap-3">
                 <input
                     type="text" id="input" onKeyUp={() => { search() }} placeholder="Search with name"
                     className="border border-gray-800 px-12 py-2 rounded-md  focus:border-blue-500"
                 />
             </div>
-            {/* <div className="overflow-x-auto"> */}
-
-            <div className="w-full max-w-screen-lg mx-auto">
+            <div className="w-full max-w-screen-lg mx-auto mt-12">
                 <table className="table w-full" id="table">
+                {toys.length == 0 &&
+                <div className="p-10 top-28 w-full flex justify-center absolute">
+                    <h1 className=" bg-white p-3 rounded-xl font-semibold">You haven't added any Toys.</h1>
+                </div>
+            }
                     <thead>
                         <tr className="divide-y" style={{ borderBottom: '1px solid black' }}>
                             <th className=""></th>
