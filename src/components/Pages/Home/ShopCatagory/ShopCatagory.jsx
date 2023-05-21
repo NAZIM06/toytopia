@@ -61,15 +61,33 @@ const ShopCategory = () => {
       }
     </div>
   </>
+
+
   return (
     <div>
       <div className='text-center mx-20 max-[650px]:mx-2 mt-16'>
         <Tabs>
-          <TabList className='font-bold flex justify-center gap-5 border-b-2 '>
-            <Tab onClick={() => { tabData('Sports Car') }}>Sports Cars</Tab>
-            <Tab onClick={() => { tabData('Supercar') }}>Super Cars</Tab>
-            <Tab onClick={() => { tabData('Truck') }}>Trucks</Tab>
+          <TabList className="flex justify-center gap-5">
+            <Tab onClick={() => { tabData('Sports Car') }}
+              className=""
+              selectedClassName="border-b-2 border-blue-500"
+            >
+              Sports Cars
+            </Tab>
+            <Tab onClick={() => { tabData('Supercar') }}
+              className=""
+              selectedClassName="border-b-2 border-blue-500"
+            >
+              Super Cars
+            </Tab>
+            <Tab onClick={() => { tabData('Truck') }}
+              className=""
+              selectedClassName="border-b-2 border-blue-500"
+            >
+              Trucks
+            </Tab>
           </TabList>
+
 
           <TabPanel>
             {tabpaneldata}

@@ -92,30 +92,34 @@ const MyToys = () => {
     }
 
 
-    const findInTable = () => {
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
+    const search = () => {
+        const filter = document.getElementById("input").value.toUpperCase();
+        const table = document.getElementById("table");
+        const rows = table.getElementsByTagName("tr");
+
+        for (let i = 0; i < rows.length; i++) {
+            let found = false;
+            const cells = rows[i].getElementsByTagName("td");
+
+            for (let j = 0; j < cells.length; j++) {
+                const cellValue = cells[j].textContent || cells[j].innerText;
+
+                if (cellValue.toUpperCase().includes(filter)) {
+                    found = true;
+                    break;
                 }
             }
+
+            rows[i].style.display = found ? "" : "none";
         }
-    }
+    };
+
 
 
     return (
         <div className="h-screen">
 
-{toys.length==0 &&
+            {toys.length == 0 &&
                 <div className="p-10 top-28 w-full flex justify-center absolute">
                     <h1 className=" bg-white p-3 rounded-xl font-semibold">You haven't added any Toys.</h1>
                 </div>
@@ -124,13 +128,13 @@ const MyToys = () => {
 
             <div className="flex justify-center my-8 gap-3">
                 <input
-                    type="text" id="myInput" onKeyUp={() => { findInTable() }} placeholder="Search with name"
+                    type="text" id="input" onKeyUp={() => { search() }} placeholder="Search with name"
                     className="border border-gray-800 px-12 py-2 rounded-md  focus:border-blue-500"
                 />
             </div>
             <div className="overflow-x-auto">
 
-                <table className="table w-full" id="myTable">
+                <table className="table w-full" id="table">
                     <thead>
                         <tr className="divide-y" style={{ borderBottom: '1px solid black' }}>
                             <th className=""></th>
@@ -184,7 +188,7 @@ const MyToys = () => {
                                         </div>
                                     </td>
                                 </tr>
-                            ) 
+                            )
                         }
                     </tbody>
                 </table>
